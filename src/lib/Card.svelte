@@ -16,8 +16,6 @@
 </script>
 
 <div class="card">
-  <img class="card-logo" src={logo} alt="" />
-
   <div class="author">
     <img src={persona.imagen} alt={persona.nombre} />
     <div>
@@ -36,9 +34,14 @@
   <div class="info-item">
     <p><span class="underline">Ingresos (total)</span></p>
     <div class="valor">
-      <span>{persona.totales ? persona.totales : '-'} €</span>
+      <span class="stat-hero">{persona.totales ? persona.totales : '-'} €</span>
     </div>
   </div>
+
+  <a class="card-brand" href="https://www.newtral.es" target="_blank" rel="noreferrer">
+    <img class="card-logo" src={logo} alt="" />
+    <span>Newtral.es</span>
+  </a>
 
   <div class="info-item">
     <p><span class="underline">Propiedades (parcial o total)</span></p>
@@ -60,7 +63,7 @@
   </div>
 
   <div class="info-item">
-    <p><span class="underline">Coches</span></p>
+    <p><span class="underline">Vehículos</span></p>
     <div class="image-container valor">
       {#if carsCount > 0}
         {#each { length: carsCount } as _}

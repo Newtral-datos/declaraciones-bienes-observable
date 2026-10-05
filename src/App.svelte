@@ -58,15 +58,36 @@
 <svelte:window onclick={handleWindowClick} />
 
 <div class="container">
-  <div class="search-bar">
-    <input type="text" placeholder="Buscar por nombre..." bind:value={searchTerm} />
-  </div>
+  <div class="toolbar">
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar por nombre..." bind:value={searchTerm} />
+    </div>
 
-  <div class="filter-bar">
-    <button onclick={() => (sortKey = 'incomeDesc')}>Ingresos ⬇</button>
-    <button onclick={() => (sortKey = 'incomeAsc')}>Ingresos ⬆</button>
-    <button onclick={() => (sortKey = 'propsDesc')}>Propiedades ⬇</button>
-    <button onclick={() => (sortKey = 'propsAsc')}>Propiedades ⬆</button>
+    <div class="filter-bar">
+      <div class="filter-group">
+        <span class="filter-label">Ingresos</span>
+        <div class="filter-buttons">
+          <button
+            class:active={sortKey === 'incomeDesc'}
+            onclick={() => (sortKey = 'incomeDesc')}>Mayor ↓</button
+          >
+          <button class:active={sortKey === 'incomeAsc'} onclick={() => (sortKey = 'incomeAsc')}
+            >Menor ↑</button
+          >
+        </div>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Propiedades</span>
+        <div class="filter-buttons">
+          <button class:active={sortKey === 'propsDesc'} onclick={() => (sortKey = 'propsDesc')}
+            >Mayor ↓</button
+          >
+          <button class:active={sortKey === 'propsAsc'} onclick={() => (sortKey = 'propsAsc')}
+            >Menor ↑</button
+          >
+        </div>
+      </div>
+    </div>
   </div>
 
   {#if loading}
