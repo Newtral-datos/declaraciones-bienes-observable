@@ -58,11 +58,6 @@
 <svelte:window onclick={handleWindowClick} />
 
 <div class="container">
-  <header class="brand">
-    <img src={logo} alt="" width="30" height="30" />
-    <span class="brand-name">NewtralData</span>
-  </header>
-
   <div class="search-bar">
     <input type="text" placeholder="Buscar por nombre..." bind:value={searchTerm} />
   </div>
@@ -85,6 +80,11 @@
       {/each}
     </div>
   {/if}
+
+  <footer class="brand">
+    <img src={logo} alt="" width="30" height="30" />
+    <span class="brand-name">NewtralData</span>
+  </footer>
 </div>
 
 {#if modal}
