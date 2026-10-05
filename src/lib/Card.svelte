@@ -1,4 +1,6 @@
 <script>
+  import logo from '../assets/logo-newtral-favicon.png';
+
   const { persona, onOpen } = $props();
 
   let propertiesCount = $derived(Number(persona.propiedades) || 0);
@@ -14,7 +16,7 @@
 </script>
 
 <div class="card">
-  <img class="card-logo" src="/logo-newtral-favicon.png" alt="" />
+  <img class="card-logo" src={logo} alt="" />
 
   <div class="author">
     <img src={persona.imagen} alt={persona.nombre} />

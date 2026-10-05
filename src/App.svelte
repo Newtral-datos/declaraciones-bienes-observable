@@ -4,6 +4,7 @@
   import { positionNearClick } from './lib/positionNearClick.js';
   import Card from './lib/Card.svelte';
   import DeclaracionDetalle from './lib/DeclaracionDetalle.svelte';
+  import logo from './assets/logo-newtral-favicon.png';
 
   let data = $state([]);
   let loading = $state(true);
@@ -58,7 +59,7 @@
 
 <div class="container">
   <header class="brand">
-    <img src="/logo-newtral-favicon.png" alt="" width="30" height="30" />
+    <img src={logo} alt="" width="30" height="30" />
     <span class="brand-name">NewtralData</span>
   </header>
 
