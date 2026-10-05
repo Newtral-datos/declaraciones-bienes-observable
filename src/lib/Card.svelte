@@ -54,7 +54,7 @@
           />
         {/each}
         {#if hasMoreProperties}
-          <span class="extra">Total: {propertiesCount}</span>
+          <span class="extra">Tot. {propertiesCount}</span>
         {/if}
       {:else}
         <span>-</span>
